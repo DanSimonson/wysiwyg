@@ -228,7 +228,7 @@ class Post extends Component {
           <Button onClick={() => document.location.reload()} color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action"><icon className="fa fa-refresh"></icon> Reset</Button>
           <div className="float-right">
           <span>
-            <Link to="/views/documents_warehouse/new_document/new_document">
+            <Link to="/newdocument">
               <Button className="btn-ghost-primary"><i className="fa fa-plus"></i> New</Button>
             </Link>
           </span>

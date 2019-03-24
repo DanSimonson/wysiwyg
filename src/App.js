@@ -6,16 +6,18 @@ import Login from './Login'
 import DocumentDisplay from './DocumentDisplay'
 import Dashboard from './Dashboard'
 import Post from './Post'
+import NewDocument from './NewDocument'
+
 class App extends Component {
   render() {
     return (
-
       <BrowserRouter>
         <div>
-
           <Switch>
+            <Route exact path="/newdocument" name="NewDocument" component={NewDocument}/>
             <Route exact path="/post" name="Post" component={Post} />
             <Route exact path="/:urlID" component={DocumentDisplay} />
+
             {/*<Route exact path="/DocumentDisplay" name="DocumentDisplay" component={DocumentDisplay} />
             <Route exact path="/login" name="Login Page" component={Login} />
     <Route path="/Post" exact component={Post}/>*/}
