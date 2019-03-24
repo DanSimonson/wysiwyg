@@ -5,9 +5,8 @@ export class Dashboard extends Component {
   render() {
     return (
       <div>
-       <h1>test</h1>
-       <Post/>
-        
+        <h1>test</h1>
+
       </div>
     )
   }

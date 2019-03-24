@@ -11,7 +11,7 @@ import { Editor } from 'react-draft-wysiwyg';
 //get firestore stuff
 import firebase from 'firebase';
 import 'firebase/firestore';
-import { firebaseApp } from '../FirebaseConfig'
+import { firebaseApp } from './FirebaseConfig'
 const db = firebaseApp.firestore()
 
 export class DocumentDisplay extends Component {
@@ -50,6 +50,7 @@ export class DocumentDisplay extends Component {
   componentDidMount() {
     let documents = []
     let id = this.props.match.params.urlID
+    console.log('DD id: ',this.props.match.params.urlID  )
     //getting data
     db.collection('editor').get().then((snapshot) => {
       snapshot.docs.forEach(doc => {
