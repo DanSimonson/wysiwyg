@@ -8,6 +8,7 @@ import Swal from 'sweetalert2'
 //get draft.js stuff
 import * as Draft from "draft-js";
 import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 //get firestore stuff
 import firebase from 'firebase';
 import 'firebase/firestore';
