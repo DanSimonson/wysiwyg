@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Post.css'
 import {
   Card, CardImg, CardText, CardBody, Table, FormGroup,
   CardTitle, CardSubtitle, Button, Label, Input, Form, Container, Row, Col
@@ -14,6 +15,7 @@ import firebase from 'firebase';
 import 'firebase/firestore';
 import { firebaseApp } from './FirebaseConfig'
 const db = firebaseApp.firestore()
+
 
 
 class Post extends Component {
@@ -135,13 +137,13 @@ class Post extends Component {
             </Link>
             <small className="text-muted">Current Version: 2.3</small>
           </td>
-          <td className="dms-td">
+          {/*<td className="dms-td">
             <img className="img-avatar img-sm mx-auto d-block" src="../../assets/img/avatars/face6.jpg" />
-          </td>
+        </td>*/}
           <td className="text-justify">
             {results[i].description}<span className="text-primary">...Read More</span>
           </td>
-          <td className="dms-td font-weight-bold">Approved</td>
+          {/*<td className="dms-td font-weight-bold">Approved</td>*/}
         </tr>);
       }
       return arr;
@@ -156,24 +158,128 @@ class Post extends Component {
 
     return (
       <div>
-        <Input id='search' type="text" value={this.state.searchInput} onChange={this.handleSearchInput} placeholder="Search" />
-        <Button onClick={this.showResult} color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action "><icon className="fa fa-search"></icon> Search</Button>
-        <Button onClick={() => document.location.reload()} color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action"><icon className="fa fa-refresh"></icon> Reset</Button>
-        <Button onClick={this.handleDelete} className="btn-ghost-danger"><i className="fa fa-trash"></i> Move to Trash</Button>
+        {/*<Container className='top-container'>
+          <Row>
+            <Col xs="3"></Col>
+            <Col>
+              <div className="action-section">
+                <div className="clearfix">
+                  <div className="float-left">
+                    <span>
+                      <Link to="/views/documents_warehouse/new_document/new_document">
+                        <Button className="btn-ghost-primary"><i className="fa fa-plus"></i> New</Button>
+                      </Link>
+                    </span>
+                    <span className="boundary">|</span>
+                    {/*<span>
+                    <Link to="#">
+                      <Button className="btn-ghost-secondary"><i className="fa fa-folder"></i> Save</Button>
+                    </Link>
+                  </span>
+                  <span className="boundary">|</span>
+                    <span>
+                      <Link to="#">
+                        <Button onClick={this.handleDelete} className="btn-ghost-danger"><i className="fa fa-trash"></i> Move to Trash</Button>
+                      </Link>
+                    </span>
+                    <span className="boundary">|</span>
+                    {/*<span>
+                    <Link to="#">
+                      <Button className="btn-ghost-info"><i className="fa fa-share-alt"></i> Share</Button>
+                    </Link>
+                  </span>
+                  <span className="boundary">|</span>
+                    <span>
+                      <Link to="/views/documents_warehouse/upload_files/upload_files">
+                        <Button className="btn-ghost-light"><i className="fa fa-cloud-upload"></i> File Upload</Button>
+                      </Link>
+                    </span>
+                    <span className="boundary">|</span>
+                    <span>
+                      <Link to="#">
+                        <Button className="btn-ghost-primary"><i className="fa fa-cloud-download"></i> File Download</Button>
+                      </Link>
+                    </span>
+                  </div>
+                  {/*<div className="float-right">
+                  <span>
+                    <Link to="#">
+                      <Button className="btn-ghost-primary"><i className="fa fa-cloud-download"></i></Button>
+                    </Link>
+                  </span>
+                  <span className="boundary">|</span>
+                  <span>
+                    <Link to="#">
+                      <Button className="btn-ghost-secondary"><i className="fa fa-print"></i></Button>
+                    </Link>
+                  </span>
+                </div>
+                </div>
+              </div>
+            </Col>
+            <Col xs="2"></Col>
+          </Row>
+        </Container>*/}
+        <div className='post-spacer'></div>
+        <Container fluid={false} className='bottom-container fluid'>
+          <Input id='search' type="text" value={this.state.searchInput} onChange={this.handleSearchInput} placeholder="Search" />
+          <Button onClick={this.showResult} color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action "><icon className="fa fa-search"></icon> Search</Button>
+          <span className="boundary">|</span>
+          <Button onClick={() => document.location.reload()} color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action"><icon className="fa fa-refresh"></icon> Reset</Button>
+          <div className="float-right">
+          <span>
+            <Link to="/views/documents_warehouse/new_document/new_document">
+              <Button className="btn-ghost-primary"><i className="fa fa-plus"></i> New</Button>
+            </Link>
+          </span>
+          <span className="boundary">|</span>
+          {/*<span>
+                    <Link to="#">
+                      <Button className="btn-ghost-secondary"><i className="fa fa-folder"></i> Save</Button>
+                    </Link>
+                  </span>
+                  <span className="boundary">|</span>*/}
+          <span>
+            <Link to="#">
+              <Button onClick={this.handleDelete} className="btn-ghost-danger"><i className="fa fa-trash"></i> Move to Trash</Button>
+            </Link>
+          </span>
+          <span className="boundary">|</span>
+          <span className="boundary">|</span>
+          {/*<span>
+                    <Link to="#">
+                      <Button className="btn-ghost-info"><i className="fa fa-share-alt"></i> Share</Button>
+                    </Link>
+                  </span>
+                  <span className="boundary">|</span>*/}
+          <span>
+            <Link to="/views/documents_warehouse/upload_files/upload_files">
+              <Button className="btn-ghost-light"><i className="fa fa-cloud-upload"></i> File Upload</Button>
+            </Link>
+          </span>
+          <span className="boundary">|</span>
+          <span>
+            <Link to="#">
+              <Button className="btn-ghost-primary"><i className="fa fa-cloud-download"></i> File Download</Button>
+            </Link>
+          </span>
+          </div>
+        </Container>
+
         <div className="tbl-scroll">
           <Table hover responsive>
             <thead>
               <tr>
                 <th className="dms-th">
-                  <FormGroup check inline className="tbl-check">
+                  {/*<FormGroup check inline className="tbl-check">
                     <Input className="form-check-input" type="checkbox" id="inline-checkbox1" name="inline-checkbox1" value="option1" />
-                  </FormGroup>
+                  </FormGroup>*/}
                 </th>
                 <th className="dms-th"></th>
                 <th className="dms-th">File Name</th>
-                <th className="dms-th">Created By</th>
+                {/*<th className="dms-th">Created By</th>*/}
                 <th className="dms-th">File Description</th>
-                <th className="dms-th">Status</th>
+                {/*<th className="dms-th">Status</th>*/}
               </tr>
             </thead>
             <tbody>
