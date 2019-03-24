@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import'./DocumentDisplay.css'
 import { BrowserRouter, HashRouter, Route, Switch, Link, NavLink, Redirect } from 'react-router-dom';
 import {
   Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
+  CardTitle, CardSubtitle, Button, Container, Col, Row
 } from 'reactstrap';
 import Swal from 'sweetalert2'
 //get draft.js stuff
@@ -51,7 +52,7 @@ export class DocumentDisplay extends Component {
   componentDidMount() {
     let documents = []
     let id = this.props.match.params.urlID
-    console.log('DD id: ',this.props.match.params.urlID  )
+    console.log('DD id: ', this.props.match.params.urlID)
     //getting data
     db.collection('editor').get().then((snapshot) => {
       snapshot.docs.forEach(doc => {
@@ -108,13 +109,11 @@ export class DocumentDisplay extends Component {
           'Your file has been edited.',
           'success'
         )
-
       }
     })
   }
   handleDelete = (e) => {
     e.preventDefault()
-
   }
 
   render() {
@@ -139,101 +138,18 @@ export class DocumentDisplay extends Component {
     })
     return (
       <div>
-        <div className="action-section">
-              {/*<div className="clearfix">
-                <div className="float-left">
-                  <span>
-                    <Link to="/views/documents_warehouse/new_document/new_document">
-                      <Button className="btn-ghost-primary"><i className="fa fa-plus"></i> New</Button>
-                    </Link>
-                  </span>
-                  <span className="boundary">|</span>
-                  <span>
-                    <Link to="#">
-                      <Button className="btn-ghost-secondary"><i className="fa fa-folder"></i> Save</Button>
-                    </Link>
-                  </span>
-                  <span className="boundary">|</span>
-                  <span>
-                    <Link to="#">
-                      <Button className="btn-ghost-danger"><i className="fa fa-trash"></i> Move to Trash</Button>
-                    </Link>
-                  </span>
-                  <span className="boundary">|</span>
-                  <span>
-                    <Link to="#">
-                      <Button className="btn-ghost-info"><i className="fa fa-share-alt"></i> Share</Button>
-                    </Link>
-                  </span>
-                  <span className="boundary">|</span>
-                  <span>
-                    <Link to="/views/documents_warehouse/upload_files/upload_files">
-                      <Button className="btn-ghost-light"><i className="fa fa-cloud-upload"></i> File Upload</Button>
-                    </Link>
-                  </span>
-                </div>
-                <div className="float-right">
-                  <span>
-                    <Link to="#">
-                      <Button className="btn-ghost-primary"><i className="fa fa-cloud-download"></i></Button>
-                    </Link>
-                  </span>
-                  <span>
-                    <Link to="#">
-                      <Button className="btn-ghost-secondary"><i className="fa fa-print"></i></Button>
-                    </Link>
-                  </span>
-                </div>
-              </div>*/}
-            </div>
         {postList}
-        <div className="action-section">
-              <div className="clearfix">
-                <div className="float-left">
-                  <span>
-                    <Link to="/views/documents_warehouse/new_document/new_document">
-                      <Button className="btn-ghost-primary"><i className="fa fa-plus"></i> New</Button>
-                    </Link>
-                  </span>
-                  <span className="boundary">|</span>
-                  <span>
-                    <Link to="#">
-                      <Button className="btn-ghost-secondary"><i className="fa fa-folder"></i> Save</Button>
-                    </Link>
-                  </span>
-                  <span className="boundary">|</span>
-                  <span>
-                    <Link to="#">
-                      <Button className="btn-ghost-danger"><i className="fa fa-trash"></i> Move to Trash</Button>
-                    </Link>
-                  </span>
-                  <span className="boundary">|</span>
-                  <span>
-                    <Link to="#">
-                      <Button className="btn-ghost-info"><i className="fa fa-share-alt"></i> Share</Button>
-                    </Link>
-                  </span>
-                  <span className="boundary">|</span>
-                  <span>
-                    <Link to="/views/documents_warehouse/upload_files/upload_files">
-                      <Button className="btn-ghost-light"><i className="fa fa-cloud-upload"></i> File Upload</Button>
-                    </Link>
-                  </span>
-                </div>
-                <div className="float-right">
-                  <span>
-                    <Link to="#">
-                      <Button className="btn-ghost-primary"><i className="fa fa-cloud-download"></i></Button>
-                    </Link>
-                  </span>
-                  <span>
-                    <Link to="#">
-                      <Button className="btn-ghost-secondary"><i className="fa fa-print"></i></Button>
-                    </Link>
-                  </span>
-                </div>
-              </div>
-            </div>
+        <div className="action-section">          
+            <Row>              
+              <Col>
+                 <span className='save-button'> 
+                  <Link to="#">
+                    <Button onClick={this.handleUpdate} className="btn-ghost-secondary"><i className="fa fa-save"></i> Save</Button>
+                  </Link>
+                  </span>                
+              </Col>            
+            </Row>
+        </div>
         <Editor
           editorState={editorState}
           toolbarClassName="toolbarClassName"
@@ -241,8 +157,8 @@ export class DocumentDisplay extends Component {
           editorClassName="editorClassName"
           onEditorStateChange={this.onEditorStateChange}
         />
-        <Button onClick={this.handleUpdate} color="alt-primary" size="sm" className="btn-pill"><i className="fa fa-save"></i> Save Changes</Button>
-        {/*<Button onClick={this.handleDelete} className="btn-ghost-danger"><i className="fa fa-trash"></i> Delete Document</Button>*/}
+        {/*<Button onClick={this.handleUpdate} color="alt-primary" size="sm" className="btn-pill"><i className="fa fa-save"></i> Save Changes</Button>
+        <Button onClick={this.handleDelete} className="btn-ghost-danger"><i className="fa fa-trash"></i> Delete Document</Button>*/}
       </div>
     )
   }
