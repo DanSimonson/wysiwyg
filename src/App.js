@@ -7,13 +7,17 @@ import DocumentDisplay from './DocumentDisplay'
 import Dashboard from './Dashboard'
 import Post from './Post'
 import NewDocument from './NewDocument'
+import MyNavbar from './Components/MyNavbar'
 
 class App extends Component {
   render() {
-    return (
+    return ( 
+      <div> 
+      <MyNavbar/>     
       <BrowserRouter>
-        <div>
+          <div>
           <Switch>
+          <Route exact path="/mynavbar" name="MyNavbar" component={MyNavbar}/>
             <Route exact path="/newdocument" name="NewDocument" component={NewDocument}/>
             <Route exact path="/post" name="Post" component={Post} />
             <Route exact path="/:urlID" component={DocumentDisplay} />
@@ -39,8 +43,10 @@ class App extends Component {
             <Route path="/DocumentDisplay" exact component={DocumentDisplay}/>
             <Route path="/:urlID" component={DocumentDisplay}/>*/}
           </Switch>
-        </div>
+          </div>
       </BrowserRouter>
+      </div>
+      
 
     );
   }
