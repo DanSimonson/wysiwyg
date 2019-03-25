@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, HashRouter, Route, Switch, Link, NavLink, Redirect } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Switch, Link, NavLink, Redirec } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import Login from './Login'
@@ -11,14 +11,16 @@ import MyNavbar from './Components/MyNavbar'
 
 class App extends Component {
   render() {
-    return ( 
-      <div> 
-      <MyNavbar/>     
-      <BrowserRouter>
-          <div>
+    return (
+      <div>
+        <MyNavbar />        
+        <BrowserRouter>        
           <Switch>
-          <Route exact path="/mynavbar" name="MyNavbar" component={MyNavbar}/>
-            <Route exact path="/newdocument" name="NewDocument" component={NewDocument}/>
+            <Route exact path="/login" name="Login Page" component={Login} />
+            <Route exact path="/" name="Login Page" component={Login} />
+            <Route exact path="/Components/MyNavbar" name="MyNavbar" component={MyNavbar} />
+            <Route exact path="/newdocument" name="NewDocument" component={NewDocument} />
+            <Route exact path="/Components/MyNavbar" name="MyNavbar" component={MyNavbar} />
             <Route exact path="/post" name="Post" component={Post} />
             <Route exact path="/:urlID" component={DocumentDisplay} />
 
@@ -43,13 +45,14 @@ class App extends Component {
             <Route path="/DocumentDisplay" exact component={DocumentDisplay}/>
             <Route path="/:urlID" component={DocumentDisplay}/>*/}
           </Switch>
-          </div>
-      </BrowserRouter>
+
+        </BrowserRouter>
       </div>
-      
+
 
     );
   }
 }
 
 export default App;
+
