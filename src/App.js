@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <MyNavbar />        
+                
         <BrowserRouter>        
           <Switch>
             <Route exact path="/login" name="Login Page" component={Login} />

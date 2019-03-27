@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import'./DocumentDisplay.css'
+import MyNavbar from './Components/MyNavbar'
 import { BrowserRouter, HashRouter, Route, Switch, Link, NavLink, Redirect } from 'react-router-dom';
 import {
   Card, CardImg, CardText, CardBody,
@@ -138,13 +139,14 @@ export class DocumentDisplay extends Component {
     })
     return (
       <div>
+        <MyNavbar/>
         {postList}
         <div className="action-section">          
             <Row>              
               <Col>
                  <span className='save-button'> 
                   <Link to="#">
-                    <Button onClick={this.handleUpdate} className="btn-ghost-secondary"><i className="fa fa-save"></i> Save</Button>
+                    <Button onClick={this.handleUpdate} className="btn-ghost-secondary"><i className="fa fa-save"></i> Save Document</Button>
                   </Link>
                   </span>                
               </Col>            

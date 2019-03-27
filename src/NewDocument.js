@@ -1,5 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import './NewDocument.css'
+import MyNavbar from './Components/MyNavbar'
 import { Link } from 'react-router-dom';
 //import { Bar, Line } from 'react-chartjs-2';
 import Swal from 'sweetalert2'
@@ -109,6 +110,7 @@ class new_document extends Component {
     const { editorState } = this.state;
     return (
       <div> 
+      <MyNavbar/>
       {/*<Button color="alt-primary" size="sm" className="btn-pill" onClick={this.saveDocument.bind(this)}><i className="fa fa-save"></i> Save New Document</Button>*/}
       <div className="animated fadeIn spacer">
         <div className="float-left text-right">

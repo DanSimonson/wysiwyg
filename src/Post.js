@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Post.css'
+import MyNavbar from './Components/MyNavbar'
 import {
   Card, CardImg, CardText, CardBody, Table, FormGroup,
   CardTitle, CardSubtitle, Button, Label, Input, Form, Container, Row, Col
@@ -158,6 +159,7 @@ class Post extends Component {
 
     return (
       <div>
+        <MyNavbar/>
         {/*<Container className='top-container'>
           <Row>
             <Col xs="3"></Col>
