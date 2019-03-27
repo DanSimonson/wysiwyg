@@ -106,7 +106,15 @@ class new_document extends Component {
     });
   };
 
+  returnToDashboard = () => {
+    //console.log('props: ',this.props)
+    this.props.history.push('/post')
+    //window.history.back()
+    //window.history.go(-1)
+  }
+
   render() {
+    //window.history.back();
     const { editorState } = this.state;
     return (
       <div> 
@@ -114,8 +122,11 @@ class new_document extends Component {
       {/*<Button color="alt-primary" size="sm" className="btn-pill" onClick={this.saveDocument.bind(this)}><i className="fa fa-save"></i> Save New Document</Button>*/}
       <div className="animated fadeIn spacer">
         <div className="float-left text-right">
-          <Button color="alt-primary" size="sm" className="btn-pill" onClick={this.saveDocument.bind(this)}><i className="fa fa-save"></i> Save New Document</Button>
+          <Button color="alt-primary" size="sm" className="btn-ghost-primary btn-secondary btn-pill btn-action" onClick={this.saveDocument.bind(this)}><i className="fa fa-save"></i> Save New Document</Button>
         </div>
+        <div className="float-right text-right">
+              <Button style={{marginRight: 12 + 'rem'}} onClick={this.returnToDashboard}color="alt-primary" size="sm" className="btn-ghost-primary btn-secondary btn-pill btn-action"><i className="fa fa-save"></i> Return to Dashboard</Button>
+              </div>
         <Form>
           <div className="file_name_here">
             <div className="clearfix">

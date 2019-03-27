@@ -82,8 +82,8 @@ class Post extends Component {
           });
           let i;
           for (i = 0; i <= docData.length - 1; i++) {
-            console.log('database array document id: ', docData[i].id.seconds)
-            console.log('state document id: ', checkedDocumentID.toString())
+            //console.log('database array document id: ', docData[i].id.seconds)
+            //console.log('state document id: ', checkedDocumentID.toString())
             if (checkedDocumentID === docData[i].id.seconds.toString()) {
               db.collection('editor').doc(docID[i]).delete()
             }
@@ -256,15 +256,15 @@ class Post extends Component {
                 <Button onClick={this.handleDelete} className="btn-ghost-danger"><i className="fa fa-trash"></i> Move to Trash</Button>
               </Link>
             </span>
+            {/*<span className="boundary">|</span>
             <span className="boundary">|</span>
-            <span className="boundary">|</span>
-            {/*<span>
+            <span>
                     <Link to="#">
                       <Button className="btn-ghost-info"><i className="fa fa-share-alt"></i> Share</Button>
                     </Link>
                   </span>
                   <span className="boundary">|</span>*/}
-            <span>
+            {/*<span>
               <Link to="/views/documents_warehouse/upload_files/upload_files">
                 <Button className="btn-ghost-light"><i className="fa fa-cloud-upload"></i> File Upload</Button>
               </Link>
@@ -274,7 +274,7 @@ class Post extends Component {
               <Link to="#">
                 <Button className="btn-ghost-primary"><i className="fa fa-cloud-download"></i> File Download</Button>
               </Link>
-            </span>
+            </span>*/}
           </div>
         </Container>
 

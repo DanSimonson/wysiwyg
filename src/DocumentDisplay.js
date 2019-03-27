@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import'./DocumentDisplay.css'
+import './DocumentDisplay.css'
 import MyNavbar from './Components/MyNavbar'
 import { BrowserRouter, HashRouter, Route, Switch, Link, NavLink, Redirect } from 'react-router-dom';
 import {
@@ -27,6 +27,7 @@ export class DocumentDisplay extends Component {
       resultIndex: 0,
       editorState: Draft.EditorState.createEmpty(),
     }
+    console.log('props: ',this.props)
   }
 
   createWithRawContent = () => {
@@ -116,8 +117,15 @@ export class DocumentDisplay extends Component {
   handleDelete = (e) => {
     e.preventDefault()
   }
+  returnToDashboard = () => {
+    //console.log('props: ',this.props)
+    this.props.history.push('/post')
+    //window.history.back()
+    //window.history.go(-1)
+  }
 
   render() {
+    //onClick={this.saveDocument.bind(this)}
     const urlID = this.state.urlID
     const results = this.state.documents
     const { editorState } = this.state
@@ -139,18 +147,21 @@ export class DocumentDisplay extends Component {
     })
     return (
       <div>
-        <MyNavbar/>
+        <MyNavbar />
         {postList}
-        <div className="action-section">          
-            <Row>              
-              <Col>
-                 <span className='save-button'> 
-                  <Link to="#">
-                    <Button onClick={this.handleUpdate} className="btn-ghost-secondary"><i className="fa fa-save"></i> Save Document</Button>
-                  </Link>
-                  </span>                
-              </Col>            
-            </Row>
+        <div className="action-section">
+          <Row>
+            <Col>
+              <span className='save-button'>
+                <Link to="#">
+                  <Button onClick={this.handleUpdate} className="btn-ghost-secondary"><i className="fa fa-save"></i> Save Document</Button>
+                </Link>
+              </span>
+              <div className="float-right text-right">
+              <Button style={{marginRight: 12 + 'rem'}} onClick={this.returnToDashboard}color="alt-primary" size="sm" className="btn-ghost-primary btn-secondary btn-pill btn-action"><i className="fa fa-save"></i> Return to Dashboard</Button>
+              </div>
+            </Col>
+          </Row>
         </div>
         <Editor
           editorState={editorState}

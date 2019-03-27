@@ -44,7 +44,6 @@ class App extends Component {
             <Route path="/DocumentDisplay" exact component={DocumentDisplay}/>
             <Route path="/:urlID" component={DocumentDisplay}/>*/}
           </Switch>
-
         </BrowserRouter>
       </div>
 

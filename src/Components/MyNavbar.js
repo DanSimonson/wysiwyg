@@ -39,17 +39,11 @@ class MyNavbar extends React.Component {
     // listen for auth status changes    
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        console.log('gotData function state: ', this.state.results[0].id)
-        console.log('auth change function state: ', this.state.results)
-        //'WULAWM5MBjY9KcaEk2g9t1aOcB33/WULAWM5MBjY9KcaEk2g9t1aOcB33.jpg'
         let i;
         for (i = 0; i <= results.length - 1; i++) {
           if (user.uid === this.state.results[i].id) {
-            console.log(this.state.results[i].displayname)
             //set display name
-            this.setState({ displayName: this.state.results[i].displayname }, () => {
-              console.log('state display name: ', this.state.results[i].displayname)
-            })
+            this.setState({ displayName: this.state.results[i].displayname })
             // Create a root reference
             var storageRef = firebase.storage().ref();
             storageRef.child(user.uid + '/' + user.uid + '.jpg').getDownloadURL().then(url => {
@@ -58,7 +52,6 @@ class MyNavbar extends React.Component {
             }).catch(function (error) {
               // Handle any errors
             });
-            //WULAWM5MBjY9KcaEk2g9t1aOcB33
 
           } else {
             //console.log('user logged out');
@@ -118,8 +111,8 @@ class MyNavbar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              {/*<NavItem onClick={this.signOut}>
-                <NavLink to="/">Logout</NavLink>
+              {/*<NavItem>
+                <Nav to="/post">Dashboard</Nav>
               </NavItem>*/}
               {/*<NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
