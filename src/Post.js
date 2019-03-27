@@ -52,9 +52,19 @@ class Post extends Component {
   }
   handleDelete = () => {
     let checkedDocumentID = this.state.checkedDocumentID
-    console.log(checkedDocumentID);
+    console.log('checkedDocumentID: ', checkedDocumentID);
     let docData = []
     let docID = []
+
+    if (checkedDocumentID === '') {
+      Swal.fire(
+        'No Checkboxes are selected?',
+        'Please Select An Item to Delete',
+        'warning'
+      )
+      return;
+    }
+
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -159,7 +169,7 @@ class Post extends Component {
 
     return (
       <div>
-        <MyNavbar/>
+        <MyNavbar />
         {/*<Container className='top-container'>
           <Row>
             <Col xs="3"></Col>
@@ -229,42 +239,42 @@ class Post extends Component {
           <span className="boundary">|</span>
           <Button onClick={() => document.location.reload()} color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action"><icon className="fa fa-refresh"></icon> Reset</Button>
           <div className="float-right">
-          <span>
-            <Link to="/newdocument">
-              <Button className="btn-ghost-primary"><i className="fa fa-plus"></i> New</Button>
-            </Link>
-          </span>
-          <span className="boundary">|</span>
-          {/*<span>
+            <span>
+              <Link to="/newdocument">
+                <Button className="btn-ghost-primary"><i className="fa fa-plus"></i> New</Button>
+              </Link>
+            </span>
+            <span className="boundary">|</span>
+            {/*<span>
                     <Link to="#">
                       <Button className="btn-ghost-secondary"><i className="fa fa-folder"></i> Save</Button>
                     </Link>
                   </span>
                   <span className="boundary">|</span>*/}
-          <span>
-            <Link to="#">
-              <Button onClick={this.handleDelete} className="btn-ghost-danger"><i className="fa fa-trash"></i> Move to Trash</Button>
-            </Link>
-          </span>
-          <span className="boundary">|</span>
-          <span className="boundary">|</span>
-          {/*<span>
+            <span>
+              <Link to="#">
+                <Button onClick={this.handleDelete} className="btn-ghost-danger"><i className="fa fa-trash"></i> Move to Trash</Button>
+              </Link>
+            </span>
+            <span className="boundary">|</span>
+            <span className="boundary">|</span>
+            {/*<span>
                     <Link to="#">
                       <Button className="btn-ghost-info"><i className="fa fa-share-alt"></i> Share</Button>
                     </Link>
                   </span>
                   <span className="boundary">|</span>*/}
-          <span>
-            <Link to="/views/documents_warehouse/upload_files/upload_files">
-              <Button className="btn-ghost-light"><i className="fa fa-cloud-upload"></i> File Upload</Button>
-            </Link>
-          </span>
-          <span className="boundary">|</span>
-          <span>
-            <Link to="#">
-              <Button className="btn-ghost-primary"><i className="fa fa-cloud-download"></i> File Download</Button>
-            </Link>
-          </span>
+            <span>
+              <Link to="/views/documents_warehouse/upload_files/upload_files">
+                <Button className="btn-ghost-light"><i className="fa fa-cloud-upload"></i> File Upload</Button>
+              </Link>
+            </span>
+            <span className="boundary">|</span>
+            <span>
+              <Link to="#">
+                <Button className="btn-ghost-primary"><i className="fa fa-cloud-download"></i> File Download</Button>
+              </Link>
+            </span>
           </div>
         </Container>
 

@@ -12,8 +12,7 @@ import MyNavbar from './Components/MyNavbar'
 class App extends Component {
   render() {
     return (
-      <div>
-                
+      <div>                
         <BrowserRouter>        
           <Switch>
             <Route exact path="/login" name="Login Page" component={Login} />
