@@ -241,7 +241,7 @@ class Post extends Component {
           <div className="float-right">
             <span>
               <Link to="/newdocument">
-                <Button className="btn-ghost-primary"><i className="fa fa-plus"></i> New</Button>
+                <Button className="btn-ghost-primary"><i className="fa fa-plus"></i> New Document</Button>
               </Link>
             </span>
             <span className="boundary">|</span>
