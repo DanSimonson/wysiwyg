@@ -164,7 +164,7 @@ class new_document extends Component {
                     <Label className="font-weight-semibold">File Name:</Label>
                     <Input type="text" value={this.state.title} id="title" placeholder="Enter File Name" onChange={this.handleChange} defaultValue="Untitled_File" autoFocus />
                   </FormGroup>
-                  <FormGroup>
+                  {/*<FormGroup>
                     <Label className="font-weight-semibold">File Location:</Label>
                     <div className="clearfix">
                       <div className="float-left">
@@ -174,8 +174,8 @@ class new_document extends Component {
                         <Link to="#"><i className="fa fa-pencil"></i> Edit</Link>
                       </div>
                     </div>
-                  </FormGroup>
-                  <FormGroup>
+                  </FormGroup>*/}
+                  {/*<FormGroup>
                     <Label className="font-weight-semibold">Save As:</Label>
                     <FormGroup check>
                       <Input className="form-check-input" type="radio" id="saveAs" name="saveAs" defaultChecked />
@@ -189,15 +189,15 @@ class new_document extends Component {
                       <Input className="form-check-input" type="radio" id="saveAs" name="saveAs" />
                       <Label className="form-check-label" check>Template</Label>
                     </FormGroup>
-                  </FormGroup>
+                  </FormGroup>*/}
                   <FormGroup>
                     <Label className="font-weight-semibold">Description:</Label>
                     <Input type="textarea" value={this.state.description} id="description" onChange={this.handleChange} placeholder="Enter Description" />
                   </FormGroup>
-                  <FormGroup>
+                  {/*<FormGroup>
                     <Label className="font-weight-semibold">Tags:</Label>
                     <Input type="text" placeholder="Enter Tags" />
-                  </FormGroup>
+                  </FormGroup>*/}
                 </Col>
                 <Col xl="12">
                   <FormGroup className="text-right">
