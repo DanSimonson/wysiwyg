@@ -234,29 +234,32 @@ class Post extends Component {
         </Container>*/}
         <div className='post-spacer'></div>
         <Container fluid={false} className='bottom-container fluid'>
-          <Input id='search' type="text" value={this.state.searchInput} onChange={this.handleSearchInput} placeholder="Search" />
-          <Button onClick={this.showResult} color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action "><icon className="fa fa-search"></icon> Search</Button>
-          <span className="boundary">|</span>
-          <Button onClick={() => document.location.reload()} color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action"><icon className="fa fa-refresh"></icon> Reset</Button>
-          <div className="float-right">
-            <span>
-              <Link to="/newdocument">
-                <Button className="btn-ghost-primary"><i className="fa fa-plus"></i> New Document</Button>
-              </Link>
-            </span>
+        <Row> 
+          <Col md='12' sm='12'>
+            <Input id='search' type="text" value={this.state.searchInput} onChange={this.handleSearchInput} placeholder="Search" />
+            <Button onClick={this.showResult} color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action "><icon className="fa fa-search"></icon> Search</Button>
             <span className="boundary">|</span>
-            {/*<span>
+            <Button onClick={() => document.location.reload()} color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action"><icon className="fa fa-refresh"></icon> Reset</Button>
+            {/**className="float-right" */}
+            <div className='float-me'>
+              <span>
+                <Link to="/newdocument">
+                  <Button className="btn-ghost-primary"><i className="fa fa-plus"></i> New Document</Button>
+                </Link>
+              </span>
+              <span className="boundary">|</span>
+              {/*<span>
                     <Link to="#">
                       <Button className="btn-ghost-secondary"><i className="fa fa-folder"></i> Save</Button>
                     </Link>
                   </span>
                   <span className="boundary">|</span>*/}
-            <span>
-              <Link to="#">
-                <Button onClick={this.handleDelete} className="btn-ghost-danger"><i className="fa fa-trash"></i> Move to Trash</Button>
-              </Link>
-            </span>
-            {/*<span className="boundary">|</span>
+              <span>
+                <Link to="#">
+                  <Button onClick={this.handleDelete} className="btn-ghost-danger"><i className="fa fa-trash"></i> Move to Trash</Button>
+                </Link>
+              </span>
+              {/*<span className="boundary">|</span>
             <span className="boundary">|</span>
             <span>
                     <Link to="#">
@@ -264,7 +267,7 @@ class Post extends Component {
                     </Link>
                   </span>
                   <span className="boundary">|</span>*/}
-            {/*<span>
+              {/*<span>
               <Link to="/views/documents_warehouse/upload_files/upload_files">
                 <Button className="btn-ghost-light"><i className="fa fa-cloud-upload"></i> File Upload</Button>
               </Link>
@@ -275,7 +278,11 @@ class Post extends Component {
                 <Button className="btn-ghost-primary"><i className="fa fa-cloud-download"></i> File Download</Button>
               </Link>
             </span>*/}
+           
           </div>
+          </Col>
+          </Row>
+          
         </Container>
 
         <div className="tbl-scroll">
