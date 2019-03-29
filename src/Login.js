@@ -62,7 +62,7 @@ class App extends Component {
                 type="email"
                 name="email"
                 id="exampleEmail"
-                placeholder="myemail@email.com"
+                placeholder="editorguestofdan@gmail.com"
               />
             </FormGroup>
           </Col>
@@ -76,7 +76,7 @@ class App extends Component {
                 type="password"
                 name="password"
                 id="examplePassword"
-                placeholder="********"
+                placeholder="123testme"
                 autoFocus
               />
             </FormGroup>
