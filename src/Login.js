@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import './Login.css'
 import {
   Container, Col, Form,
   FormGroup, Label, Input,
-  Button,
+  Button, Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
@@ -86,6 +88,11 @@ class App extends Component {
             <Button className="float-right">Forgot Password</Button>
           </div>
         </Form>
+        <div className='row-manage'></div>
+        <Card className='card-manage'>
+          <CardText>Guest User Name: editorguestofdan@gmail.com</CardText>
+          <CardText>Password: 123testme.</CardText>
+        </Card>
       </Container>
     );
   }
