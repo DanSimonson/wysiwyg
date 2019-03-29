@@ -149,16 +149,17 @@ export class DocumentDisplay extends Component {
       <div>
         <MyNavbar />
         {postList}
+        
         <div className="action-section">
           <Row>
             <Col>
               <span className='save-button'>
                 <Link to="#">
-                  <Button onClick={this.handleUpdate} className="btn-ghost-secondary"><i className="fa fa-save"></i> Save Document</Button>
+                  <Button onClick={this.handleUpdate} className="btn-ghost-secondary btn-pill btn-action"><i className="fa fa-save"></i> Save Document</Button>
                 </Link>
               </span>
-              <div className="float-right text-right">
-              <Button style={{marginRight: 12 + 'rem'}} onClick={this.returnToDashboard}color="alt-primary" size="sm" className="btn-ghost-primary btn-secondary btn-pill btn-action"><i className="fa fa-save"></i> Return to Dashboard</Button>
+              <div className="float-me">
+              <Button style={{marginRight: 12 + 'rem'}} onClick={this.returnToDashboard}color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action"><i className="fa fa-home"></i> Return to Dashboard</Button>
               </div>
             </Col>
           </Row>

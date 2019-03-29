@@ -5,3 +5,14 @@
   color: oldlace;
   background: grey;
 }
+@media (max-width: 500px) {
+  .float-me {
+     float: left;
+   }
+ }
+ 
+  @media (min-width: 501px) {
+  .float-me {
+     float: right;
+   }
+ }

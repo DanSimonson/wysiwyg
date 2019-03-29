@@ -124,8 +124,8 @@ class new_document extends Component {
         <div className="float-left text-right">
           <Button color="alt-primary" size="sm" className="btn-ghost-primary btn-secondary btn-pill btn-action" onClick={this.saveDocument.bind(this)}><i className="fa fa-save"></i> Save New Document</Button>
         </div>
-        <div className="float-right text-right">
-              <Button style={{marginRight: 12 + 'rem'}} onClick={this.returnToDashboard}color="alt-primary" size="sm" className="btn-ghost-primary btn-secondary btn-pill btn-action"><i className="fa fa-save"></i> Return to Dashboard</Button>
+        <div className="float-me">
+              <Button style={{marginRight: 12 + 'rem'}} onClick={this.returnToDashboard}color="alt-primary" size="sm" className="btn-ghost-primary btn-secondary btn-pill btn-action"><i className="fa fa-home"></i> Return to Dashboard</Button>
               </div>
         <Form>
           <div className="file_name_here">
