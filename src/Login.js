@@ -97,9 +97,10 @@ class App extends Component {
           
           }).catch(function(error) {
             // An error happened..
+            //
             Swal.fire(
               'Oops...',
-              `${emailAddress} is not a valid login email address`,
+              `not a valid login email address`,
               'error'
             )
         })      
