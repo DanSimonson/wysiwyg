@@ -62,7 +62,7 @@ class App extends Component {
   focusInput = () => {
     // Explicitly focus the text input using the raw DOM API
     // Note: we're accessing "current" to get the DOM node
-    //this.myRef.current.focus();
+    this.myRef.current.focus();
     //this.myRef.current.value = ''
   }
 

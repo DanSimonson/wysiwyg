@@ -121,7 +121,7 @@ class MyNavbar extends React.Component {
               </NavItem>*/}
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  <span className="display-name d-sm-inline-block d-none header-color text-uppercase user-name">Hello, <label className="font-weight-semibold">{this.state.displayName}</label></span>
+                  <span className="mr-2 display-name d-sm-inline-block d-none header-color text-uppercase user-name">Hello, <label className="font-weight-semibold">{this.state.displayName}</label></span>
                   {/**'../../assets/img/avatars/face6.jpg' */}
                   <img src={this.state.url} className="img-avatar mr-0" alt="user-photo" />
                 </DropdownToggle>
