@@ -123,6 +123,9 @@ export class DocumentDisplay extends Component {
     //window.history.back()
     //window.history.go(-1)
   }
+  getWord = () => {
+    console.log('in get word')
+  }
 
   render() {
     //onClick={this.saveDocument.bind(this)}
@@ -159,7 +162,8 @@ export class DocumentDisplay extends Component {
                 </Link>
               </span>
               <div className="float-me">
-              <Button style={{marginRight: 12 + 'rem'}} onClick={this.returnToDashboard}color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action"><i className="fa fa-home"></i> Return to Dashboard</Button>
+              <Button style={{marginRight: 1 + 'rem'}} onClick={this.returnToDashboard}color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action"><i className="fa fa-home"></i> Return to Dashboard</Button>
+              <Button style={{marginRight: 1 + 'rem'}} onClick={this.getWord}color="alt-primary" className="btn-ghost-primary btn-secondary btn-pill btn-action"><i className="fa fa-home"></i>Dictionary</Button>
               </div>
             </Col>
           </Row>
