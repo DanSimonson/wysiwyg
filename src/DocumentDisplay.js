@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./DocumentDisplay.css";
 import MyNavbar from "./Components/MyNavbar";
+
 import {
   BrowserRouter,
   HashRouter,
@@ -147,7 +148,7 @@ export class DocumentDisplay extends Component {
     //window.history.go(-1)
   };
   getWord = () => {
-    console.log("in get word");
+    this.props.history.push("/dictionary");
   };
 
   render() {
