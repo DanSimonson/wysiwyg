@@ -1,0 +1,49 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+.wrap-content {
+  background-color: orange;
+}
+
+.dictionary-container {
+  width: 100%;
+  min-height: 50vh;
+  background-color: #03a9f4;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  position: relative;
+}
+
+.box {
+  background-color: #e1f5fe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  width: 70vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#dictionary-input {
+  margin-left: 10px;
+  height: 50%;
+  width: 50%;
+}
+#label-dictionary {
+  margin-top: 12px;
+}
+.makeRoom {
+  margin-left: 12px;
+}
+.fa:hover {
+  cursor: pointer;
+}
