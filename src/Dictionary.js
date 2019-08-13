@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Definition from "./Components/Definition";
 import Swal from "sweetalert2";
 import "./Dictionary.css";
 import { Breadcrumb, BreadcrumbItem } from "reactstrap";
@@ -8,6 +9,7 @@ class Dictionary extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: true,
       inputValue: "",
       results: {}
     };
@@ -23,9 +25,10 @@ class Dictionary extends Component {
   };
 
   handleClick = () => {
+    ///definition
     if (this.state.inputValue !== undefined) {
       let temp = this.state.inputValue;
-      let URL = `https://wordsapiv1.p.mashape.com/words/${temp}/definition`;
+      let URL = `https://wordsapiv1.p.mashape.com/words/${temp}`;
       //console.log("URL: ", URL);
       axios
         .get(URL, {
@@ -36,13 +39,13 @@ class Dictionary extends Component {
           }
         })
         .then(response => {
-          console.log("response.data: ", response.data);
+          //console.log("response.data: ", response.data);
           this.setState(
             {
               results: response.data
             },
             () => {
-              console.log("this.state.results: ", this.state.results);
+              //console.log("this.state.results: ", this.state.results);
             }
           );
         })
@@ -55,10 +58,12 @@ class Dictionary extends Component {
           this.setState({ inputValue: "" });
         });
     }
+    //document.getElementById("definition").className = " active";
   };
 
   openCity = (evt, name) => {
     var i, tabcontent, tablinks;
+
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
@@ -128,7 +133,7 @@ class Dictionary extends Component {
           </div>
         </div>
         <div className="main-content" />
-        <div class="tab">
+        <div className="tab">
           <button
             className="tablinks"
             onClick={e => this.openCity(e, "definition")}
@@ -147,32 +152,32 @@ class Dictionary extends Component {
           >
             Antonyms
           </button>
-          <button
+          {/*<button
             className="tablinks"
             onClick={e => this.openCity(e, "examples")}
           >
             Examples
-          </button>
+          </button>*/}
         </div>
         <div className="returned-info">
-          <div id="definition" class="tabcontent">
-            <h3>Definition</h3>
-            <p>Definition is...</p>
+          <div id="definition" className="tabcontent active">
+            <Definition results={this.state} />
+            {/*<h3>Definition</h3>
+            <p>Definition is...</p>*/}
           </div>
-          <div id="synonyms" class="tabcontent">
+          <div id="synonyms" className="tabcontent">
             <h3>Synonym</h3>
             <p>Synonym is...</p>
           </div>
 
-          <div id="antonyms" class="tabcontent">
+          <div id="antonyms" className="tabcontent">
             <h3>Antonym</h3>
             <p>Antonym is...</p>
           </div>
-
-          <div id="examples" class="tabcontent">
+          {/*<div id="examples" clasName="tabcontent">
             <h3>Examples</h3>
             <p>Examples are...</p>
-          </div>
+          </div>*/}
         </div>
       </div>
     );
