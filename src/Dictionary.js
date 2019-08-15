@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Definition from "./Components/Definition";
+import Synonyms from "./Components/Synonyms";
 import Swal from "sweetalert2";
 import "./Dictionary.css";
 import { Breadcrumb, BreadcrumbItem } from "reactstrap";
@@ -148,9 +149,9 @@ class Dictionary extends Component {
           </button>
           <button
             className="tablinks"
-            onClick={e => this.openCity(e, "antonyms")}
+            onClick={e => this.openCity(e, "examples")}
           >
-            Antonyms
+            Examples
           </button>
           {/*<button
             className="tablinks"
@@ -166,13 +167,14 @@ class Dictionary extends Component {
             <p>Definition is...</p>*/}
           </div>
           <div id="synonyms" className="tabcontent">
-            <h3>Synonym</h3>
-            <p>Synonym is...</p>
+            <Synonyms results={this.state} />
+            {/*<h3>Synonym</h3>
+            <p>Synonyms are...</p>*/}
           </div>
 
-          <div id="antonyms" className="tabcontent">
-            <h3>Antonym</h3>
-            <p>Antonym is...</p>
+          <div id="examples" className="tabcontent">
+            <h3>Examples</h3>
+            <p>Examples are...</p>
           </div>
           {/*<div id="examples" clasName="tabcontent">
             <h3>Examples</h3>

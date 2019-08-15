@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Volkhov&display=swap");
+
 * {
   border: 0;
   margin: 0;
@@ -7,10 +9,13 @@
 
 body {
   height: 100vh;
+  font-family: "Volkhov", serif;
 }
 .wrap-all {
   /*border: 5px solid orange;*/
   height: 100vh;
+}
+.active {
 }
 
 .dictionary-container {
@@ -23,6 +28,7 @@ body {
 }
 
 .box {
+  border: 1px solid #e1f5fe;
   background-color: #e1f5fe;
   display: flex;
   justify-content: center;
@@ -60,18 +66,25 @@ body {
 }
 /* Style the tab */
 .tab {
+  display: flex;
+  justify-content: center;
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  /*border: 1px solid #ccc;*/
+  background-color: #e3f2fd; /*#f1f1f1;*/
 }
 
 /* Style the buttons inside the tab */
 .tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
+  background-color: #bbdefb; /*#ccc; /*inherit;*/
+  /*box-shadow: 5px 10px;
+  float: left;*/
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
   outline: none;
   cursor: pointer;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding: 14px 16px;
   transition: 0.3s;
   font-size: 17px;
@@ -80,6 +93,7 @@ body {
 /* Change background color of buttons on hover */
 .tab button:hover {
   background-color: #03a9f4; /*#ddd;*/
+  color: white;
 }
 
 /* Create an active/current tablink class */
